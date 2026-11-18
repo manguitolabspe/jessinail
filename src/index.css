@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jessi-purple: #70048C;
+  --color-jessi-fuchsia: #EE0272;
+  --color-jessi-bg: #FFF9FC;
+  --color-jessi-lavender: #F5EDF8;
+  --color-jessi-ink: #29212D;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: #FFF9FC;
+    color: #29212D;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.text-balance-wrap {
+  text-wrap: balance;
+}
+
+@keyframes mesh-shift {
+  0%, 100% {
+    background-position: 0% 25%;
+  }
+  50% {
+    background-position: 100% 75%;
+  }
+}
+
+@keyframes aura-drift-1 {
+  0%, 100% {
+    transform: translate3d(-4%, -4%, 0) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate3d(24%, 16%, 0) scale(1.16) rotate(12deg);
+  }
+  66% {
+    transform: translate3d(-10%, 24%, 0) scale(0.96) rotate(-8deg);
+  }
+}
+
+@keyframes aura-drift-2 {
+  0%, 100% {
+    transform: translate3d(4%, 4%, 0) scale(1) rotate(0deg);
+  }
+  40% {
+    transform: translate3d(-24%, -18%, 0) scale(1.18) rotate(-12deg);
+  }
+  75% {
+    transform: translate3d(10%, -22%, 0) scale(0.95) rotate(8deg);
+  }
+}
+
+@keyframes aura-drift-3 {
+  0%, 100% {
+    transform: translate3d(-50%, 0, 0) scale(0.94);
+    opacity: 0.65;
+  }
+  33% {
+    transform: translate3d(-32%, -14%, 0) scale(1.18);
+    opacity: 0.95;
+  }
+  66% {
+    transform: translate3d(-68%, 12%, 0) scale(1.06);
+    opacity: 0.8;
+  }
+}
+
+@keyframes silk-sheen {
+  0% {
+    transform: translate3d(-65%, -22%, 0) rotate(-14deg);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate3d(65%, 18%, 0) rotate(-8deg);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(-65%, -22%, 0) rotate(-14deg);
+    opacity: 0.25;
+  }
+}
+
+@keyframes ribbon-sway {
+  0%, 100% {
+    transform: translate3d(-16px, 0, 0) scale(1.02) rotate(-1deg);
+  }
+  50% {
+    transform: translate3d(16px, -24px, 0) scale(1.06) rotate(1deg);
+  }
+}
+
+@keyframes shimmer-float {
+  0%, 100% {
+    transform: translate3d(0, 12px, 0) scale(0.8) rotate(0deg);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(0, -24px, 0) scale(1.22) rotate(24deg);
+    opacity: 0.95;
+  }
+}
+
+.animate-mesh-shift {
+  background-size: 220% 220%;
+  animation: mesh-shift 10s ease-in-out infinite;
+  will-change: background-position;
+}
+
+.animate-aura-1 {
+  animation: aura-drift-1 9s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-aura-2 {
+  animation: aura-drift-2 11s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-aura-3 {
+  animation: aura-drift-3 8s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-silk-sheen {
+  animation: silk-sheen 7.5s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-ribbon-sway {
+  animation: ribbon-sway 6.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-shimmer-float {
+  animation: shimmer-float var(--shimmer-duration, 4.2s) ease-in-out infinite;
+  animation-delay: var(--shimmer-delay, 0s);
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Remix JESSI Nail",
+  "description": "Tarjeta de presentación digital y servicios de manicura de JESSI Nail (Jessica) en Talara, Perú.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
